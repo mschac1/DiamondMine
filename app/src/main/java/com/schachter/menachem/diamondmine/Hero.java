@@ -13,7 +13,7 @@ public class Hero {
     int maxAttack = 2;
     int attackBonus = 0;
     int maxLevel = 1;
-    int diamonds = 0;
+    int diamonds = 3;
     int healthBonus = 0;
     int treasureBonus = 0;
 

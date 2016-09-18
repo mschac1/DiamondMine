@@ -87,6 +87,11 @@ public class Game {
             hero.heal();
             setTurnCount(getTurnCount() + 1);
         }
+        setCurrentLevel(0);
+    }
+
+    public int getCurrentHealth() {
+        return hero.getHealth();
     }
 
     public int getPrice(Suit suit, boolean isBonus) {
@@ -97,6 +102,9 @@ public class Game {
         store.buy(suit, isBonus);
     }
 
+
+    public int nextInStore(Suit suit, boolean isBonus) {return store.next(suit, isBonus);
+    }
     protected static final int BONUS_ATTACK_BASE = 11;
 
     /* This method returns a random attack value selected from the joint set of the values
@@ -130,6 +138,7 @@ public class Game {
     public static Level[] getLevels() {
         return levels;
     }
+
 
 
 }

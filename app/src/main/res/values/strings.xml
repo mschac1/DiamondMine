@@ -1,11 +1,18 @@
 <resources>
     <string name="app_name">DiamondMine</string>
     <string name="action_settings">Settings</string>
-    <string name="suite_prompt">Suite</string>
+    <string name="level_prompt">Level</string>
 
-    <string-array name="suite_array">
-        <item>DIAMONDS</item>
-        <item>CLUBS</item>
-        <item>HEARTS</item>
+    <string-array name="level_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
     </string-array>
 </resources>
