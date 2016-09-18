@@ -82,4 +82,36 @@
         android:layout_alignTop="@+id/store_text"
         android:layout_toEndOf="@+id/store_text" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Base Hearts"
+        android:id="@+id/heart_base_button"
+        android:layout_alignTop="@+id/club_base_button"
+        android:layout_toEndOf="@+id/club_base_button" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bonus Clubs"
+        android:id="@+id/club_bonus_button"
+        android:layout_below="@+id/club_base_button"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Base Hearts"
+        android:id="@+id/heart_bonus_button"
+        android:layout_below="@+id/club_base_button"
+        android:layout_toEndOf="@+id/club_bonus_button" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Base Diamonds"
+        android:id="@+id/diamond_bonus_button"
+        android:layout_below="@+id/heart_base_button"
+        android:layout_toEndOf="@+id/heart_bonus_button" />
+
 </RelativeLayout>

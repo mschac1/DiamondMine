@@ -65,8 +65,10 @@ public class Store {
             case HEARTS:
                 if (isBonus)
                     hero.setHealthBonus(hero.getHealthBonus() + 1);
-                else
+                else {
                     hero.setMaxHealth(hero.getMaxHealth() + 1);
+                    hero.setHealth(hero.getHealth() + 1);
+                }
                 break;
             case DIAMONDS:
                 if (isBonus) {
@@ -80,9 +82,9 @@ public class Store {
 
     static final int[] basicClubCost = {-1, -1, -1, 3, 4, 5, 6, 7, 8, 9, 10};
     static final int[] basicHeartCost = {-1, -1, -1, 3, 4, 5, 6, 7, 8, 9, 10};
-    static final int[] bonusClubCost = {0, 1, 2, 3};
-    static final int[] bonusHeartCost = {0, 1, 2, 3};
-    static final int[] bonusDiamondCost = {0, 1, 2, 3};
+    static final int[] bonusClubCost = {0, 6, 12, 18};
+    static final int[] bonusHeartCost = {0, 3, 6, 9};
+    static final int[] bonusDiamondCost = {0, 3, 6, 9};
 
     static int[][] basicItemList = new int[4][];
     static int[][] bonusItemList = new int[4][];

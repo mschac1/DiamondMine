@@ -12,7 +12,7 @@ public class Game {
     Random rng = new Random();
     int currentLevel = 0;
     int turnCount = 1;
-    Store store = null;
+    private Store store = null;
 
     public Game() {
         newGame();
@@ -99,6 +99,8 @@ public class Game {
     }
 
     public void buy(Suit suit, boolean isBonus) {
+        if (getCurrentLevel() != 0)
+            throw new IllegalStateException("Cannot buy while in battle");
         store.buy(suit, isBonus);
     }
 
@@ -130,9 +132,13 @@ public class Game {
             new Level(BASE_MIN_ATTACK,     BASE_MAX_ATTACK,     0, BASE_HEALTH, 1, 0),
             new Level(BASE_MIN_ATTACK,     BASE_MAX_ATTACK + 1, 0, BASE_HEALTH, 2, 1),
             new Level(BASE_MIN_ATTACK,     BASE_MAX_ATTACK + 2, 0, BASE_HEALTH, 3, 1),
-            new Level(BASE_MIN_ATTACK + 1, BASE_MAX_ATTACK + 3, 1, BASE_HEALTH + 1, 4, 2),
+            new Level(BASE_MIN_ATTACK,     BASE_MAX_ATTACK + 3, 0, BASE_HEALTH + 1, 4, 2),
             new Level(BASE_MIN_ATTACK + 1, BASE_MAX_ATTACK + 4, 1, BASE_HEALTH + 1, 5, 2),
-            new Level(BASE_MIN_ATTACK + 1, BASE_MAX_ATTACK + 5, 1, BASE_HEALTH + 1, 6, 2)
+            new Level(BASE_MIN_ATTACK + 1, BASE_MAX_ATTACK + 5, 1, BASE_HEALTH + 1, 6, 2),
+            new Level(BASE_MIN_ATTACK + 1, BASE_MAX_ATTACK + 6, 1, BASE_HEALTH + 2, 7, 3),
+            new Level(BASE_MIN_ATTACK + 2, BASE_MAX_ATTACK + 7, 2, BASE_HEALTH + 2, 8, 3),
+            new Level(BASE_MIN_ATTACK + 2, BASE_MAX_ATTACK + 8, 2, BASE_HEALTH + 2, 9, 3),
+            new Level(BASE_MIN_ATTACK + 3, BASE_MAX_ATTACK + 8, 3, BASE_HEALTH + 3, 10, 3),
     };
 
     public static Level[] getLevels() {
@@ -140,5 +146,7 @@ public class Game {
     }
 
 
-
+    public boolean isNextAvaliable(Suit suit, boolean isBonus) {
+        return store.isNextAvaliable(suit, isBonus);
+    }
 }
